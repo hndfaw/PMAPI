@@ -1,3 +1,5 @@
+**Program Management API**
+
 This is a Node.js application to use RESTful API. The app is built using Express, Knex, and PostgreSQL. The API consists of data for Humanitarian NGO programs; programs and projects.
 
 How to fetch data:
@@ -28,9 +30,9 @@ To get data:
   *New Program Object* should have: `Name`, `Beneficiaries` and `Budget`.
   *New Program Object Example:*
   {
-    "name": <String>",
-    "beneficiaries": <Number>,
-    "budget": <Number>
+    "name": `<String>`,
+    "beneficiaries": `<Number>`,
+    "budget": `<Number>`
   }
 
   Path: /api/v1/programs
@@ -41,10 +43,10 @@ To get data:
     *New Project Object* should have: `Name`, `Status`,`Beneficiaries` and `Budget`.
     *New Project Object Example:*
     {
-      "name": <String>",
-      "status": <String>,
-      "beneficiaries": <Number>,
-      "budget": <Number>
+      "name": `<String>`,
+      "status": `<String>`,
+      "beneficiaries": `<Number>`,
+      "budget": `<Number>`
     }
 
     Path: /api/v1/programs/:id
