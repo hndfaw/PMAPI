@@ -46,7 +46,7 @@ app.get('/api/v1/programs/:id', (request, response) => {
     })
 })
 
-// get all projects
+// get all projects of one program
 
 app.get('/api/v1/programs/:id/projects', (request, response) => {
   const { id } = request.params
@@ -58,6 +58,7 @@ app.get('/api/v1/programs/:id/projects', (request, response) => {
       response.status(500).json({ error });
     });
 });
+
 
 // get one project by id
 
@@ -120,5 +121,24 @@ app.post('/api/v1/programs/:id', (request, response) => {
     })
     .catch(error => {
       response.status(500).json( error );
+    });
+});
+
+// DELETE
+
+// delete a project
+
+app.delete('/api/v1/programs/:id/projects/:projectId', (request, response) => {
+  const {id, projectId} = request.params;
+
+  database('projects').where({
+    program_id: id,
+    id: projectId
+  }).del()
+    .then(() => {
+      response.status(201).json({projectId})
+    })
+    .catch(error => {
+      response.status(422).json( error );
     });
 });
