@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
-// app.use(express.json());
+app.use(express.json());
 app.use(express.static('public'));
 app.use(cors());
 
@@ -72,5 +72,53 @@ app.get('/api/v1/programs/:id/projects/:projectId', (request, response) => {
     })
     .catch((error) => {
       response.status(500).json({ error });
+    });
+});
+
+
+// POST
+
+// post a new program
+
+app.post('/api/v1/programs', (request, response) => {
+  const program = request.body;
+
+  for (let requiredParameter of ['name', 'beneficiaries', 'budget']) {
+    if (!program[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { name: <String>, beneficiaries: <Number>, budget: <Number> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
+
+  database('programs').insert(program, 'id')
+    .then(program => {
+      response.status(201).json({ id: program[0] })
+    })
+    .catch(error => {
+      response.status(500).json(  error );
+    });
+});
+
+// post a new project
+
+app.post('/api/v1/programs/:id', (request, response) => {
+  const project = request.body;
+  const program_id = request.params.id;
+
+  for (let requiredParameter of ['name', 'status', 'beneficiaries', 'budget']) {
+    if (!project[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { name: <String>, beneficiaries: <Number>, budget: <Number> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
+
+  database('projects').insert({program_id, ...project}, 'id')
+    .then(project => {
+      response.status(201).json({ id: project[0] })
+    })
+    .catch(error => {
+      response.status(500).json( error );
     });
 });
