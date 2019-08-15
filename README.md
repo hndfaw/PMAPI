@@ -49,12 +49,12 @@ To get data:
       "budget": `<Number>`
     }
 
-    Path: /api/v1/programs/:id
+   Path: /api/v1/programs/:id
 
   7. Delete  a new project:
     Requirements: `Program ID` and `Project ID`.
 
-    Path: /api/v1/programs/:id/projects/projectId
+   Path: /api/v1/programs/:id/projects/projectId
 
 
 * Note: all IDs in the path are Program IDs.
