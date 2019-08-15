@@ -1,54 +1,6 @@
-let programsData = [
-  {
-    name: 'AAA',
-    beneficiaries: 10000,
-    budget: 30000,
-    projects: [{
-      name: 'AAA Stuff',
-      status: 'Completed',
-      beneficiaries: 120,
-      budget: 30000,
-    }]
-  },
-  {
-    name: 'BBB',
-    beneficiaries: 10000,
-    budget: 30000,
-    projects: [
-      {
-        name: 'BBB Stuff',
-        status: 'Completed',
-        beneficiaries: 120,
-        budget: 30000,
-      },
-      {
-        name: 'BBB Stuff 2',
-        status: 'Completed',
-        beneficiaries: 120,
-        budget: 30000,
-      }
-    ]
-  },
-  {
-    name: 'CCC',
-    beneficiaries: 10000,
-    budget: 30000,
-    projects: [
-      {
-        name: 'CCC Stuff',
-        status: 'Completed',
-        beneficiaries: 120,
-        budget: 30000,
-      },
-      {
-        name: 'CCC Stuff 2',
-        status: 'Completed',
-        beneficiaries: 120,
-        budget: 30000,
-      }
-    ]
-  }
-];
+const programsData = require('../data/programs');
+const projectsData = require('../data/projects');
+
 
 const createProgram = (knex, program) => {
   return knex('programs').insert({
@@ -57,18 +9,23 @@ const createProgram = (knex, program) => {
     budget: program.budget,
   }, 'id')
   .then(programId => {
+
     let projectsPromises = [];
-    program.projects.forEach(project => {
-      projectsPromises.push(
-        createProject(knex, {
-          name: project.name,
-          status: project.status,
-          beneficiaries: project.beneficiaries,
-          budget: project.budget,
-          program_id: programId[0]
-        })
-      )
-    });
+    projectsData.forEach(project => {
+
+      if ((project.programId + 211) == programId) {
+       projectsPromises.push(
+         createProject(knex, {
+           name: project.name,
+           status: project.status,
+           beneficiaries: project.beneficiaries,
+           budget: project.budget,
+           program_id: programId[0]
+         })
+       )
+      }
+     });
+
 
     return Promise.all(projectsPromises);
   })
