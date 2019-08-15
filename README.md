@@ -1,1 +1,1 @@
-This is readme page..
+This is a Node.js application to use RESTful API. The app is built using Express, Knex, and PostgreSQL. The API consists of data for Humanitarian 
