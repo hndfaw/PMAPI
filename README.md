@@ -4,8 +4,6 @@ This is a Node.js application to use RESTful API. The app is built using Express
 
 How to fetch data:
 
-To get data:
-
 1. Get all programs data:
 
   Path: /api/v1/programs
