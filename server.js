@@ -42,21 +42,50 @@ app.get('/api/v1/programs/:id', (request, response) => {
   const {id} = request.params
   database('programs').where('id', id).select()
     .then(program => {
-      response.status(200).json(program)
+      if(program.length) {
+        response.status(200).json(program[0])
+      } else {
+        response.status(404).json({
+          error: `Could not find program with id ${id}`
+        })
+      }
     })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
 })
+
 
 // get all projects of one program
 
 app.get('/api/v1/programs/:id/projects', (request, response) => {
   const { id } = request.params
-  database('projects').where('program_id', id).select()
+
+  database('programs').where('id', id).select()
+  .then(program => {
+    if(!program.length) {
+      response.status(404).json({
+        error: `Could not find program with id ${id}`
+      })
+    } else {
+      getProjects()
+    }
+  })
+
+  const getProjects = database('projects').where('program_id', id).select()
     .then(projects => {
-      response.status(200).json(projects);
-    })
+      if(projects.length) {
+        response.status(200).json(projects);
+      } else {
+        response.status(404).json({
+          error: `There are no projects under program with id ${id}`
+        })
+      }
+  })
     .catch((error) => {
-      response.status(500).json({ error });
-    });
+    response.status(500).json({ error });
+  });
+  
 });
 
 
@@ -64,12 +93,31 @@ app.get('/api/v1/programs/:id/projects', (request, response) => {
 
 app.get('/api/v1/programs/:id/projects/:projectId', (request, response) => {
   const { id, projectId } = request.params
-  database('projects').where({
+
+  database('programs').where('id', id).select()
+  .then(program => {
+    if(!program.length) {
+      response.status(404).json({
+        error: `Could not find program with id ${id}`
+      })
+    } else {
+      getProject()
+    }
+  })
+
+  const getProject = database('projects').where({
     program_id: id,
     id: projectId
   }).select()
     .then(project => {
-      response.status(200).json(project);
+      if(project.length) {
+        response.status(200).json(project);
+      } else {
+        response.status(404).json({
+          error: `There is no project with id ${projectId}`
+        })
+      }
+
     })
     .catch((error) => {
       response.status(500).json({ error });
@@ -131,7 +179,7 @@ app.post('/api/v1/programs/:id', (request, response) => {
 app.delete('/api/v1/programs/:id/projects/:projectId', (request, response) => {
   const {id, projectId} = request.params;
 
-  database('projects').where({
+ database('projects').where({
     program_id: id,
     id: projectId
   }).del()
