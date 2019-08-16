@@ -4,8 +4,6 @@ This is a Node.js application to use RESTful API. The app is built using Express
 
 How to fetch data:
 
-To get data:
-
 1. Get all programs data:
 
   Path: /api/v1/programs
@@ -13,17 +11,17 @@ To get data:
 2. Get data of one program:
   Requirements: `Program ID`.
 
-  Path: /api/v1/programs/:id
+  Path: pmapi-node.herokuapp.com/api/v1/programs/:id
 
 3. Get data of the projects of one program:
   Requirements: `Program ID`.
 
-  Path: /api/v1/programs/:id/projects
+  Path: pmapi-node.herokuapp.com/api/v1/programs/:id/projects
 
 4. Get data of one project:
   Requirements:`Program ID` and `Project ID`.
 
-  Path: /api/v1/programs/:id/projects/:projectId
+  Path: pmapi-node.herokuapp.com/api/v1/programs/:id/projects/:projectId
 
 5. Post (Add) a new program:
   Requirements: `New program object`.
@@ -35,7 +33,7 @@ To get data:
     "budget": `<Number>`
   }
 
-  Path: /api/v1/programs
+  Path: pmapi-node.herokuapp.com/api/v1/programs
 
 
   6. Post (Add) a new project:
@@ -49,12 +47,12 @@ To get data:
       "budget": `<Number>`
     }
 
-    Path: /api/v1/programs/:id
+    Path: pmapi-node.herokuapp.com/api/v1/programs/:id
 
   7. Delete  a new project:
     Requirements: `Program ID` and `Project ID`.
 
-    Path: /api/v1/programs/:id/projects/projectId
+    Path: pmapi-node.herokuapp.com/api/v1/programs/:id/projects/projectId
 
 
 * Note: all IDs in the path are Program IDs.

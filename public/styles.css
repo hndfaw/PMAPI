@@ -39,16 +39,50 @@
 }
 
 .note {
-  color: #613A00;
-  border: 1px solid #dca874;
+  color: rgb(90, 97, 0);
+  border: 1px solid #dadc74;
   background-color: #ffe3c8;
   font-size: 13px;
-  padding: 3px;
+  padding: 5px;
   border-radius: 3px;
+}
+
+.fetch {
+  color: #264c72;
+  border: 1px solid #97c1da;
+  background-color: #d8ebf8;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.path-req {
+  background: #97c1da;
+  border: 1px solid #97c1da;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  padding: 5px;
+  color: #000;
 }
 
 .paragraph {
   font-size: 13px;
   padding: 3px;
   margin-bottom: 5px;
+}
+
+.headers {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.head-req {
+  background: red;
+  height: 100%;
 }
