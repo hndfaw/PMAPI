@@ -49,7 +49,7 @@ How to fetch data:
 
     Path: pmapi-node.herokuapp.com/api/v1/programs/:id
 
-  7. Delete  a new project:
+  7. Delete a project:
     Requirements: `Program ID` and `Project ID`.
 
     Path: pmapi-node.herokuapp.com/api/v1/programs/:id/projects/projectId

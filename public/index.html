@@ -12,24 +12,83 @@
     </header>
     <main class="main">
       <p class="paragraph">This is a Node.js application to use RESTful API. The app is built using Express, Knex, and PostgreSQL. The API consists of data for Humanitarian NGO programs; programs and projects.</p>
-
       <h3 class="headers">How to fetch data:</h3>
-
       <div class="fetch">
         <h4>Get all programs data</h4>
         <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs</p>
       </div>
-
       <div class="fetch">
           <h4>Get data of one program</h4>
-          <p class="path-req"><span class="head-req">Requirements</span> Program ID.</p>
-          <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs/:id</p>
-        </div>
-
+          <p class="path-req"><span class="head-req">Requirements</span> <span class="reqired"> Program ID</span></p>
+          <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs/<span class="reqired">:id</span></p>
+      </div>
+      <div class="fetch">
+          <h4>Get data of the projects of one program</h4>
+          <p class="path-req"><span class="head-req">Requirements</span><span class="reqired"> Program ID</span></p>
+          <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs/<span class="reqired">:id</span>/projects</p>
+      </div>
+      <div class="fetch">
+          <h4>Get data of one project</h4>
+          <p class="path-req"><span class="head-req">Requirements</span><span class="reqired"> Program ID</span> and <span class="reqired">Project ID</span></p>
+          <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs<span class="reqired">:id</span>/projects/<span class="reqired">:projectId</span>/projects</p>
+      </div>
+      <div class="fetch">
+          <h4>Post (Add) a new program</h4>
+          <p class="path-req"><span class="head-req">Requirements</span><span class="reqired"> New program object</span></p>
+          <p class="note">New Program Object should have <span class="reqired">Name</span>,<span class="reqired"> Beneficiaries</span> and <span class="reqired">Budget</span></p>
+          <div class="example">
+            <p class="">New Program Object Example:</p>
+            <p class="example-body">
+                {
+                  <br>
+                  <span class="ex-content">"name": &lt;String&gt;,</span>
+                  <br>
+                  <span class="ex-content">"beneficiaries": &lt;Number&gt;,</span>
+                  <br>
+                  <span class="ex-content">"budget": &lt;Number&gt;</span>
+                  <br>
+                }
+            </p>
+          </div>
+          <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs</p>
+      </div>
+      <div class="fetch">
+          <h4>Post (Add) a new project</h4>
+          <p class="path-req"><span class="head-req">Requirements</span><span class="reqired"> Program ID</span> and <span class="reqired"> New project object</span> </p>
+          <p class="note">New Program Object should have <span class="reqired">Name</span>, <span class="reqired">Status</span>,<span class="reqired"> Beneficiaries</span> and <span class="reqired">Budget</span></p>
+          <div class="example">
+            <p class="">New Program Object Example:</p>
+            <p class="example-body">
+                {
+                  <br>
+                  <span class="ex-content">"name": &lt;String&gt;,</span>
+                  <br>
+                  <span class="ex-content">"Status": &lt;String&gt;,</span>
+                  <br>
+                  <span class="ex-content">"beneficiaries": &lt;Number&gt;,</span>
+                  <br>
+                  <span class="ex-content">"budget": &lt;Number&gt;</span>
+                  <br>
+                }
+            </p>
+          </div>
+          <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs</p>
+      </div>
+      <div class="fetch">
+          <h4>Delete a project</h4>
+          <p class="path-req"><span class="head-req">Requirements</span> <span class="reqired"> Program ID</span> and <span class="reqired"> Project ID</span></p>
+          <p class="path-req"><span class="head-req">Path</span> pmapi-node.herokuapp.com/api/v1/programs<span class="reqired">:id</span>/projects/<span class="reqired">:projectId</span>/projects</p>
+      </div>
       <p class="note">
-        Note: all IDs in the path are Program IDs.
+        Note: all <span class="focus">:id</span>s in the path are <span class="focus">Program ID</span>s.
       </p>
     </main>
-
+    <footer class="footer">
+        <p class="footer-text">The website is designed by Hindreen Abdullah, Front End Engineering Student at Turing School of Software and Design</p>
+        <div class="git-hub-linked-in">
+               <a class="git-hub-btn btn"  target="_blank" id="myGithub" href="https://github.com/hndfaw" >My GitHub</a>
+               <a class="linked-in-btn btn"  target="_blank" id="myGithub" href="https://www.linkedin.com/in/hndfaw/" >My LinkedIn</a>
+        </div>
+    </footer>
   </body>
 </html>

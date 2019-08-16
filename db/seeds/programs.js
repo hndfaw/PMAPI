@@ -22,7 +22,7 @@ const processedData = () => {
 const programsData = processedData()
 
 const createProgram = (knex, program) => {
-  console.log(programsData)
+
   return knex('programs').insert({
     name: program.name,
     beneficiaries: program.beneficiaries,
