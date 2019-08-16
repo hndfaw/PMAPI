@@ -2,7 +2,7 @@ module.exports = [
   {
     id: 1,
     programId: 1,
-    projectName: 'Agriculture stuff',
+    name: 'Agriculture stuff',
     status: 'Completed',
     beneficiaries: 120,
     budget: 30000,
@@ -10,7 +10,7 @@ module.exports = [
   {
     id: 2,
     programId: 1,
-    projectName: 'Agriculture stuff 2',
+    name: 'Agriculture stuff 2',
     status: 'Ongoing',
     beneficiaries: 220,
     budget: 50000,
@@ -18,7 +18,7 @@ module.exports = [
   {
     id: 3,
     programId: 2,
-    projectName: 'Shelter kits',
+    name: 'Shelter kits',
     status: 'Ongoing',
     beneficiaries: 520,
     budget: 150000,
@@ -26,7 +26,7 @@ module.exports = [
   {
     id: 4,
     programId: 3,
-    projectName: 'Camp x services',
+    name: 'Camp x services',
     status: 'Closed',
     beneficiaries: 6320,
     budget: 150000,
@@ -34,7 +34,7 @@ module.exports = [
   {
     id: 5,
     programId: 3,
-    projectName: 'Camp y services',
+    name: 'Camp y services',
     status: 'Closed',
     beneficiaries: 4000,
     budget: 550000,
@@ -42,7 +42,7 @@ module.exports = [
   {
     id: 6,
     programId: 3,
-    projectName: 'Camp y services',
+    name: 'Camp y services',
     status: 'Ongoing',
     beneficiaries: 63320,
     budget: 400000,
@@ -50,7 +50,7 @@ module.exports = [
   {
     id: 7,
     programId: 4,
-    projectName: 'Education services in x location',
+    name: 'Education services in x location',
     status: 'Closed',
     beneficiaries: 73510,
     budget: 700000,
@@ -58,7 +58,7 @@ module.exports = [
   {
     id: 8,
     programId: 5,
-    projectName: 'Education services in x location',
+    name: 'Education services in x location',
     status: 'Completed',
     beneficiaries: 73510,
     budget: 700000,
@@ -66,7 +66,7 @@ module.exports = [
   {
     id: 9,
     programId: 6,
-    projectName: 'Community empowerment',
+    name: 'Community empowerment',
     status: 'Ongoing',
     beneficiaries: 73510,
     budget: 700000,
@@ -74,7 +74,7 @@ module.exports = [
   {
     id: 10,
     programId: 6,
-    projectName: 'Community empowerment 2',
+    name: 'Community empowerment 2',
     status: 'Not Started',
     beneficiaries: 50000,
     budget: 650000,
