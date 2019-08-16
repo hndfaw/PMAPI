@@ -13,7 +13,7 @@ const createProgram = (knex, program) => {
     let projectsPromises = [];
     projectsData.forEach(project => {
 
-      if ((project.programId + 211) == programId) {
+      if (project.programId  == programId) {
        projectsPromises.push(
          createProject(knex, {
            name: project.name,
@@ -25,7 +25,6 @@ const createProgram = (knex, program) => {
        )
       }
      });
-
 
     return Promise.all(projectsPromises);
   })
@@ -49,6 +48,3 @@ exports.seed = (knex) => {
     })
     .catch(error => console.log(`Error seeding data: ${error}`));
 };
-
-
-
