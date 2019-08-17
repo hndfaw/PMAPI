@@ -35,7 +35,7 @@ How to fetch data:
     "budget": `<Number>`
   }
 
-  Path: https://pmapi-node.herokuapp.com/api/v1/programs
+  `Path: https://pmapi-node.herokuapp.com/api/v1/programs`
 
 
   6. Post (Add) a new project:
