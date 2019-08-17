@@ -78,9 +78,15 @@
           <p class="path-req"><span class="head-req">Path</span> https://pmapi-node.herokuapp.com/api/v1/programs</p>
       </div>
       <div class="fetch">
+        <h4>Delete a program</h4>
+        <p class="path-req"><span class="head-req">Requirements</span> <span class="reqired"> Program ID</span></p>
+        <p class="path-req"><span class="head-req">Path</span> https://pmapi-node.herokuapp.com/api/v1/programs/<span class="reqired">:id</span></p>
+        <p class="note">Deleting program will also delete all projects under that parogram!</p>
+    </div>
+      <div class="fetch">
           <h4>Delete a project</h4>
           <p class="path-req"><span class="head-req">Requirements</span> <span class="reqired"> Program ID</span> and <span class="reqired"> Project ID</span></p>
-          <p class="path-req"><span class="head-req">Path</span> https://pmapi-node.herokuapp.com/api/v1/programs<span class="reqired">:id</span>/projects/<span class="reqired">:projectId</span>/projects</p>
+          <p class="path-req"><span class="head-req">Path</span> https://pmapi-node.herokuapp.com/api/v1/programs<span class="reqired">:id</span>/projects/<span class="reqired">:projectId</span></p>
       </div>
       <p class="note">
         Note: all <span class="focus">:id</span>s in the path are <span class="focus">Program ID</span>s.

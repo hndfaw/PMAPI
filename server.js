@@ -18,9 +18,6 @@ app.use(cors());
 
 app.locals.title = 'BYOB';
 
-// app.get('/', (request, response) => {
-//   response.send('This is PMAPI project');
-// });
 
 app.listen(app.get('port'), () => {
   console.log(`${app.locals.title} is running on http://localhost:${app.get('port')}.`);
@@ -177,6 +174,26 @@ app.post('/api/v1/programs/:id', (request, response) => {
 
 // DELETE
 
+// delete a program
+
+app.delete('/api/v1/programs/:id', (request, response) => {
+  const {id} = request.params;
+database('projects').where({
+  program_id: id,
+}).del().then(()=>
+  database('programs').where({
+     id,
+  }).del()
+  .then(() => {
+    response.status(201).json({id})
+  })
+  .catch(error => {
+    response.status(422).json( error );
+  })
+)
+});
+
+
 // delete a project
 
 app.delete('/api/v1/programs/:id/projects/:projectId', (request, response) => {
@@ -193,3 +210,4 @@ app.delete('/api/v1/programs/:id/projects/:projectId', (request, response) => {
       response.status(422).json( error );
     });
 });
+
