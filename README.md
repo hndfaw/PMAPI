@@ -6,22 +6,22 @@ How to fetch data:
 
 1. Get all programs data:
 
-  Path: /api/v1/programs
+  Path: https://pmapi-node.herokuapp.com/api/v1/programs
 
 2. Get data of one program:
   Requirements: `Program ID`.
 
-  Path: pmapi-node.herokuapp.com/api/v1/programs/:id
+  Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id
 
 3. Get data of the projects of one program:
   Requirements: `Program ID`.
 
-  Path: pmapi-node.herokuapp.com/api/v1/programs/:id/projects
+  Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id/projects
 
 4. Get data of one project:
   Requirements:`Program ID` and `Project ID`.
 
-  Path: pmapi-node.herokuapp.com/api/v1/programs/:id/projects/:projectId
+  Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id/projects/:projectId
 
 5. Post (Add) a new program:
   Requirements: `New program object`.
@@ -33,7 +33,7 @@ How to fetch data:
     "budget": `<Number>`
   }
 
-  Path: pmapi-node.herokuapp.com/api/v1/programs
+  Path: https://pmapi-node.herokuapp.com/api/v1/programs
 
 
   6. Post (Add) a new project:
@@ -47,12 +47,12 @@ How to fetch data:
       "budget": `<Number>`
     }
 
-    Path: pmapi-node.herokuapp.com/api/v1/programs/:id
+    Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id
 
   7. Delete a project:
     Requirements: `Program ID` and `Project ID`.
 
-    Path: pmapi-node.herokuapp.com/api/v1/programs/:id/projects/projectId
+    Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id/projects/projectId
 
 
 * Note: all IDs in the path are Program IDs.
