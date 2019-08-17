@@ -49,19 +49,19 @@ How to fetch data:
       "budget": `<Number>`
     }
 
-    Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id
+    `Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id`
 
   7. Delete a project:
     Requirements: `Program ID` .
 
-    Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id
+    `Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id`
 
   *Note* Deleting program will also delete all projects under that parogram!
 
   8. Delete a project:
     Requirements: `Program ID` and `Project ID`.
 
-    Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id/projects/projectId
+    `Path: https://pmapi-node.herokuapp.com/api/v1/programs/:id/projects/projectId`
 
 
 * Note: all IDs in the path are Program IDs.
