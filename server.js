@@ -180,7 +180,8 @@ app.delete('/api/v1/programs/:id', (request, response) => {
   const {id} = request.params;
 database('projects').where({
   program_id: id,
-}).del().then(()=>
+}).del()
+.then(()=>
   database('programs').where({
      id,
   }).del()
